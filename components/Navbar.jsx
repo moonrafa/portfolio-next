@@ -7,7 +7,7 @@ import { useState } from 'react'
 const Navbar = () => {
   const [openSideBar, setOpenSideBar] = useState(false)
   return (
-    <nav className="fixed items-center justify-between px-4 2xl:px-16 flex w-full h-20 shadow-xl z-[100]">
+    <nav className="fixed items-center justify-between px-4 lg:px-24 flex w-full h-20 shadow-xl z-[100] bg-[#ecf0f3]">
       <div className="cursor-pointer">
         <Image src="/assets/logo.svg" width={40} height={40} alt="logo" />
       </div>
@@ -48,7 +48,7 @@ const Navbar = () => {
           className={
             openSideBar
               ? 'flex flex-col justify-around fixed left-0 top-0 w-3/4 sm:w-4/5  h-screen bg-[#ecf0f3] p-10 ease-in duration-500 lg:hidden'
-              : 'flex flex-col justify-around fixed left-[-100%] top-0 w-3/4 sm:w-4/5  h-screen bg-[#ecf0f3] p-10 ease-in duration-500 lg:hidden'
+              : 'flex flex-col justify-around fixed left-[-100%] top-0 w-3/4 sm:w-4/5  h-screen bg-[#ecf0f3] p-10 ease-in-out duration-500 lg:hidden'
           }
         >
           <div>
@@ -61,9 +61,7 @@ const Navbar = () => {
                 />
               </button>
             </div>
-            <p className="py-6 sm:text-sm text-xs border-b border-gray-300">
-              Let's build fantastic applications together
-            </p>
+            <p className="py-6 sm:text-sm text-xs border-b border-gray-300"></p>
           </div>
 
           <ul className="py-4 flex flex-col">
@@ -87,7 +85,7 @@ const Navbar = () => {
             <p className="sm:text-lg uppercase tracking-widest text-[#5651e5]">
               Connect with me
             </p>
-            <div className="my-4 w-4/5 sm:w-3/4 flex items-center justify-between">
+            <div className="my-4 w-4/5 sm:w-3/4 pb-8 flex items-center justify-between">
               <button className="social-button">
                 <FaLinkedin />
               </button>
