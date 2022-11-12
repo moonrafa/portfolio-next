@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import About from '../components/About'
 import Homescreen from '../components/Homescreen'
 import Navbar from '../components/Navbar'
 
@@ -21,9 +22,9 @@ export default function Home() {
         />
       </Head>
       <Navbar />
-      <Homescreen />
 
-      <main className="">
+      <main>
+        <Homescreen />
         <Image
           width={35}
           height={35}
@@ -31,6 +32,7 @@ export default function Home() {
           src="/assets/rct.svg"
           alt="figura geometrica"
         />
+        <About />
       </main>
     </div>
   )
