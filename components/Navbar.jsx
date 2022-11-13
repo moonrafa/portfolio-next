@@ -11,21 +11,21 @@ const Navbar = () => {
       <div className="cursor-pointer">
         <Image src="/assets/logo.svg" width={40} height={40} alt="logo" />
       </div>
-      <div className="">
-        <ul className="hidden lg:flex">
-          <Link href="/">
+      <div>
+        <ul className="hidden lg:flex text-xs">
+          <Link href="#home">
             <li className="nav-link">Home</li>
           </Link>
-          <Link href="/">
+          <Link href="#about">
             <li className="nav-link">About</li>
           </Link>
-          <Link href="/">
+          <Link href="#skills">
             <li className="nav-link">Skills</li>
           </Link>
-          <Link href="/">
+          <Link href="#projects">
             <li className="nav-link">Projects</li>
           </Link>
-          <Link href="/">
+          <Link href="#contact">
             <li className="nav-link">Contact</li>
           </Link>
         </ul>
@@ -64,20 +64,23 @@ const Navbar = () => {
             <p className="py-6 sm:text-sm text-xs border-b border-gray-300"></p>
           </div>
 
-          <ul className="py-4 flex flex-col">
-            <Link href="/">
+          <ul
+            onClick={() => setOpenSideBar(false)}
+            className="py-4 flex flex-col"
+          >
+            <Link href="#home">
               <li className="sidebar-link">Home</li>
             </Link>
-            <Link href="/">
+            <Link href="#about">
               <li className="sidebar-link">About</li>
             </Link>
-            <Link href="/">
+            <Link href="#skills">
               <li className="sidebar-link">Skills</li>
             </Link>
-            <Link href="/">
+            <Link href="#projects">
               <li className="sidebar-link">Projects</li>
             </Link>
-            <Link href="/">
+            <Link href="#contact">
               <li className="sidebar-link">Contact</li>
             </Link>
           </ul>

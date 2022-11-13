@@ -54,3 +54,9 @@
     @apply w-5 h-5;
   }
 }
+span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #5651e5 !important;
+}
+* {
+  scroll-behavior: smooth;
+}
