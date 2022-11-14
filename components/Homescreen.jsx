@@ -33,7 +33,7 @@ const Homescreen = () => {
         </div>
       </div>
       <div className=" max-h-[184px] min-w-[310px] sm:max-h-[280px] lg:h-1/2 lg:min-w-[480px] h-4/5 w-4/5 mx-auto lg:mx-0 md:p-6 bg-[#ECF0F3] shadow-lg rounded-lg lg:mt-48 mt-7 pt-5 lg:max-w-[500px]">
-        <div class="text-[#5651e5] px-5 pb-4 sm:text-sm text-[9px] w-full">
+        <div className="text-[#5651e5] px-5 pb-4 sm:text-sm text-[9px] w-full">
           <pre>
             1&nbsp;&nbsp;class <b>Person </b>&#123;
           </pre>

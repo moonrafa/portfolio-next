@@ -1,11 +1,18 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import About from '../components/About'
+import Contact from '../components/Contact'
 import Homescreen from '../components/Homescreen'
 import Navbar from '../components/Navbar'
+import Projects from '../components/Projects'
 import Skills from '../components/Skills'
+import emailjs from '@emailjs/browser'
+import Footer from '../components/Footer'
 
 export default function Home() {
+  ;(function () {
+    emailjs.init('5hixrZRlAnZhTf7QG')
+  })()
   return (
     <div>
       <Head>
@@ -15,13 +22,8 @@ export default function Home() {
           content="Rafaelly Rodrigues is a software engineer specialized in building accessible, functional, and user-friendly applications with clean code architectures."
         />
         <link rel="icon" href="/favicon.svg" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;900&display=swap"
-          rel="stylesheet"
-        />
       </Head>
+
       <Navbar />
 
       <main>
@@ -35,7 +37,10 @@ export default function Home() {
         />
         <About />
         <Skills />
+        <Projects />
+        <Contact />
       </main>
+      <Footer />
     </div>
   )
 }

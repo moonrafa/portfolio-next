@@ -4,7 +4,7 @@ import React from 'react'
 const SkillItem = ({ icon, name }) => {
   return (
     <div
-      class="flex items-center justify-between lg:justify-center flex-nowrap p-3 shadow-xl rounded-xl hover:scale-105 ease-in duration-300; 
+      className="flex items-center justify-between lg:justify-center flex-nowrap p-3 shadow-xl rounded-xl hover:scale-105 ease-in duration-300; 
     "
     >
       <Image
