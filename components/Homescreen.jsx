@@ -9,7 +9,7 @@ const Homescreen = () => {
     >
       <div className="min-w-[300px] max-h-[310px] w-full h-3/5 mx-auto p-2 flex items-center lg:items-start justify-center flex-col lg:mt-28  md:mt-10 mt-20 text-center lg:text-left">
         <div className="pl-8 ">
-          <p className="pt-2">Hello, I'm</p>
+          <p className="pt-2">Hello, I&apos;m</p>
           <h1 className="py-2 text-[33px] md:text-[40px] uppercase font-black">
             Rafaelly Rodrigues
           </h1>
@@ -66,11 +66,11 @@ const Homescreen = () => {
           </pre>
           <pre>2&nbsp;&nbsp;&nbsp; constructor() &#123; </pre>
           <pre>
-            3&nbsp;&nbsp;&nbsp;&nbsp; this.name = "<b>Rafaelly</b>";
+            3&nbsp;&nbsp;&nbsp;&nbsp; this.name = &quot;<b>Rafaelly</b>&quot;;
           </pre>
           <pre>
-            4&nbsp;&nbsp;&nbsp;&nbsp; this.job = ["
-            <b>SOFTWARE ENGINEER</b>", "<b>DEV</b>"];
+            4&nbsp;&nbsp;&nbsp;&nbsp; this.job = [&quot;
+            <b>SOFTWARE ENGINEER</b>&quot;, &quot;<b>DEV</b>&quot;];
           </pre>
           <pre>
             5&nbsp;&nbsp;&nbsp;&nbsp; this.age = new Date().getFullYear() -
