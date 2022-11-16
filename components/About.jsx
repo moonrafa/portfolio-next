@@ -16,8 +16,14 @@ const About = () => {
             <p className="py-2 text-gray-600 text-justify px-3 md:px-20 md:text-lg">
               I've always been pragmatic, and a problem-solver, I started
               building projects and developing my code skills when I was 17
-              years old. Currently, I'm majoring in Information Technology at
-              the Federal University of Mato Grosso do Sul (UFMS). <br />
+              years old. Currently, I'm majoring in{' '}
+              <span className="text-[#5651e5]"> Information Technology </span>{' '}
+              at the{' '}
+              <span className="text-[#5651e5]">
+                {' '}
+                Federal University of Mato Grosso do Sul (UFMS).{' '}
+              </span>{' '}
+              <br />
               I'm very passionate about building and maintaining applications,
               I'm creative, yet analytical, and I believe that building modern
               software requires a combination of both in order to create the

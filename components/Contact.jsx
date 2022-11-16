@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react'
 import emailjs from '@emailjs/browser'
 import { FaDiscord, FaEnvelope, FaGithubAlt, FaLinkedin } from 'react-icons/fa'
+import Link from 'next/link'
 
 const Contact = () => {
   const formInitialDetails = {
@@ -43,7 +44,7 @@ const Contact = () => {
       <h2 className="text-[#5651e5] font-black py-4 pt-20 text-center lg:text-left lg:pl-20">
         Get In Touch
       </h2>
-      <div className="rounded-lg lg:py-20 lg:pl-20 flex-col-reverse lg:flex-row flex lg:h-2/3 h-full w-full items-center justify-center lg:justify-between shadow-lg">
+      <div className="rounded-lg lg:py-20 lg:pl-20 flex-col-reverse lg:flex-row flex lg:h-2/3 h-full w-full items-center justify-center lg:justify-between">
         <div className="hidden mr-2 w-full lg:flex flex-col justify-between h-2/3">
           <div>
             <h2 className="whitespace-nowrap text-[#5651e5]">
@@ -54,16 +55,40 @@ const Contact = () => {
 
           <div>
             <button className="social-button mr-3 home-social">
-              <FaLinkedin />
+              <Link
+                href="https://linkedin.com/in/moonrafa"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaLinkedin />
+              </Link>
             </button>
             <button className="social-button mr-3 home-social">
-              <FaGithubAlt />
+              <Link
+                href="https://github.com/moonrafa"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaGithubAlt />
+              </Link>
             </button>
             <button className="social-button mr-3 home-social">
-              <FaDiscord />
+              <Link
+                href="https://discord.com/users/770899536318169109"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaDiscord />
+              </Link>
             </button>
             <button className="social-button home-social">
-              <FaEnvelope />
+              <Link
+                href="mailto:rrafasrodrigues@gmail.com"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaEnvelope />
+              </Link>
             </button>
           </div>
         </div>
@@ -123,12 +148,12 @@ const Contact = () => {
                 </div>
               </div>
               {status.message && (
-                <div className="pt-2">
+                <div className="pt-2 ">
                   <p
                     className={
                       status.success === false
-                        ? 'text-red-500'
-                        : 'text-green-500'
+                        ? 'text-red-500 text-center lg:text-left'
+                        : 'text-green-500 text-center lg:text-left'
                     }
                   >
                     {status.message}

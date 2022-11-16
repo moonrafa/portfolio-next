@@ -2,12 +2,31 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
 import { FaDiscord, FaEnvelope, FaGithubAlt, FaLinkedin } from 'react-icons/fa'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const Navbar = () => {
   const [openSideBar, setOpenSideBar] = useState(false)
+  const [shadow, setShadow] = useState(false)
+
+  useEffect(() => {
+    const handleShadow = () => {
+      if (window.scrollY > 90) {
+        setShadow(true)
+      } else {
+        setShadow(false)
+      }
+    }
+    window.addEventListener('scroll', handleShadow)
+  }, [])
+
   return (
-    <nav className="fixed items-center justify-between px-4 lg:px-24 flex w-full h-20 shadow-xl z-[100] bg-[#ecf0f3]">
+    <nav
+      className={
+        shadow
+          ? 'fixed items-center justify-between px-4 lg:px-24 flex w-full h-20 shadow-xl z-[100] bg-[#ecf0f3]'
+          : 'fixed items-center justify-between px-4 lg:px-24 flex w-full h-20 z-[100] bg-[#ecf0f3]'
+      }
+    >
       <div className="cursor-pointer">
         <Image src="/assets/logo.svg" width={40} height={40} alt="logo" />
       </div>
@@ -90,16 +109,40 @@ const Navbar = () => {
             </p>
             <div className="my-4 w-4/5 sm:w-3/4 pb-8 flex items-center justify-between">
               <button className="social-button">
-                <FaLinkedin />
+                <Link
+                  href="https://linkedin.com/in/moonrafa"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FaLinkedin />
+                </Link>
               </button>
               <button className="social-button">
-                <FaGithubAlt />
+                <Link
+                  href="https://github.com/moonrafa"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FaGithubAlt />
+                </Link>
               </button>
               <button className="social-button">
-                <FaDiscord />
+                <Link
+                  href="https://discord.com/users/770899536318169109"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FaDiscord />
+                </Link>
               </button>
               <button className="social-button">
-                <FaEnvelope />
+                <Link
+                  href="mailto:rrafasrodrigues@gmail.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FaEnvelope />
+                </Link>
               </button>
             </div>
           </div>

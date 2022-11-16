@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { FaDiscord, FaEnvelope, FaGithubAlt, FaLinkedin } from 'react-icons/fa'
 
 const Homescreen = () => {
@@ -15,25 +16,51 @@ const Homescreen = () => {
           <p className="uppercase "> Software Engineer</p>
         </div>
         <button className="mt-6 font-medium hover:scale-105 text-xs ml-8 rounded-lg px-6 py-3 md:px-4 uppercase bg-gradient-to-r from-[#5651e5] to-[#709dff] text-white shadow-md shadow-gray-300">
-          Download CV
+          <Link href="/assets/cv.pdf" target="_blank">
+            Download CV
+          </Link>
         </button>
         <div className="pl-8 pt-8 md:pt-16">
           <button className="social-button mr-3 home-social">
-            <FaLinkedin />
+            <Link
+              href="https://linkedin.com/in/moonrafa"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaLinkedin />
+            </Link>
           </button>
           <button className="social-button mr-3 home-social">
-            <FaGithubAlt />
+            <Link
+              href="https://github.com/moonrafa"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaGithubAlt />
+            </Link>
           </button>
           <button className="social-button mr-3 home-social">
-            <FaDiscord />
+            <Link
+              href="https://discord.com/users/770899536318169109"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaDiscord />
+            </Link>
           </button>
           <button className="social-button home-social">
-            <FaEnvelope />
+            <Link
+              href="mailto:rrafasrodrigues@gmail.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaEnvelope />
+            </Link>
           </button>
         </div>
       </div>
       <div className=" max-h-[184px] min-w-[310px] sm:max-h-[280px] lg:h-1/2 lg:min-w-[480px] h-4/5 w-4/5 mx-auto lg:mx-0 md:p-6 bg-[#ECF0F3] shadow-lg rounded-lg lg:mt-48 mt-7 pt-5 lg:max-w-[500px]">
-        <div className="text-[#5651e5] px-5 pb-4 sm:text-sm text-[9px] w-full">
+        <div className="text-[#5651e5] px-5 pb-4 sm:text-sm text-[9px] w-full cursor-default	">
           <pre>
             1&nbsp;&nbsp;class <b>Person </b>&#123;
           </pre>
