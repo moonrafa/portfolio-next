@@ -9,15 +9,15 @@ const ProjectItem = ({ demo, title, stack, repo, live }) => {
       <Image
         className="rounded-xl group-hover:opacity-10"
         src={demo}
-        alt={title}
+        alt={title ? title : 'project'}
       />
-      <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
-        <h3 className="text-xl lg:text-2xl text-white tracking-wider text-center">
+      <div className="w-full p-2 hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
+        <h3 className="text-xl text-white tracking-wider text-center">
           {title}
         </h3>
-        <p className="pb-4 pt-2 text-white text-center">{stack}</p>
+        <p className="pb-2 pt-2 text-white text-center">{stack}</p>
 
-        <div className="w-full flex justify-center items-center">
+        <div className="w-full flex justify-center items-center pb-4">
           {live && (
             <Link href={live} target="_blank" rel="noreferrer">
               <button className="whitespace-nowrap mr-4 text-center p-3 rounded-lg bg-white text-gray-700 font-medium text-sm cursor-pointer hover:scale-105 hover:font-bold">

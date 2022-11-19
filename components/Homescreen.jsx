@@ -13,7 +13,7 @@ const Homescreen = () => {
           <h1 className="py-2 text-[33px] md:text-[40px] uppercase font-black">
             Rafaelly Rodrigues
           </h1>
-          <p className="uppercase "> Software Engineer</p>
+          <p className="uppercase "> Software Developer</p>
         </div>
         <button className="mt-6 font-medium hover:scale-105 text-xs ml-8 rounded-lg px-6 py-3 md:px-4 uppercase bg-gradient-to-r from-[#5651e5] to-[#709dff] text-white shadow-md shadow-gray-300">
           <Link href="/assets/cv.pdf" target="_blank">
@@ -70,7 +70,7 @@ const Homescreen = () => {
           </pre>
           <pre>
             4&nbsp;&nbsp;&nbsp;&nbsp; this.job = [&quot;
-            <b>SOFTWARE ENGINEER</b>&quot;, &quot;<b>DEV</b>&quot;];
+            <b>SOFTWARE DEVELOPER</b>&quot;, &quot;<b>DEV</b>&quot;];
           </pre>
           <pre>
             5&nbsp;&nbsp;&nbsp;&nbsp; this.age = new Date().getFullYear() -

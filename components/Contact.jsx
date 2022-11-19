@@ -50,7 +50,7 @@ const Contact = () => {
             <h2 className="whitespace-nowrap text-[#5651e5]">
               Rafaelly Rodrigues
             </h2>
-            <p className="text-sm uppercase pt-4">Software engineer</p>
+            <p className="text-sm uppercase pt-4">Software developer</p>
           </div>
 
           <div>

@@ -7,7 +7,15 @@ import { useState, useEffect } from 'react'
 const Navbar = () => {
   const [openSideBar, setOpenSideBar] = useState(false)
   const [shadow, setShadow] = useState(false)
-
+  const [darkMode, setDarkMode] = useState(false)
+  const handleTheme = () => {
+    if (darkMode) {
+      setDarkMode(false)
+    } else {
+      setDarkMode(true)
+    }
+  }
+  console.log(darkMode)
   useEffect(() => {
     const handleShadow = () => {
       if (window.scrollY > 90) {
@@ -48,6 +56,7 @@ const Navbar = () => {
             <li className="nav-link">Contact</li>
           </Link>
         </ul>
+
         <div className="cursor-pointer lg:hidden">
           <AiOutlineMenu
             size={35}

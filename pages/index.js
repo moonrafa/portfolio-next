@@ -13,14 +13,20 @@ export default function Home() {
   ;(function () {
     emailjs.init('5hixrZRlAnZhTf7QG')
   })()
+
   return (
     <div>
       <Head>
-        <title>Rafaelly Rodrigues | Software Engineer </title>
+        <title>Rafaelly Rodrigues | Software Developer </title>
         <meta
           name="description"
-          content="Rafaelly Rodrigues is a software engineer specialized in building accessible, functional, and user-friendly applications with clean code architectures."
+          content="Rafaelly Rodrigues is a software developer specialized in building accessible, functional, and user-friendly applications with clean code architectures."
         />
+        <meta
+          name="keywords"
+          content="software developer, software engineer, front-end, back-end, mobile"
+        />
+
         <link rel="icon" href="/favicon.svg" />
       </Head>
 
@@ -29,6 +35,7 @@ export default function Home() {
       <main>
         <Homescreen />
         <Image
+          priority
           width={35}
           height={35}
           className="w-[40%] absolute right-0 top-20 -z-50"

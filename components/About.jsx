@@ -14,9 +14,9 @@ const About = () => {
         <div className="max-w-[1240px] m-auto lg:grid grid-cols-2 gap-8 flex flex-col-reverse">
           <div className="cols-span-2 ">
             <p className="py-2 text-gray-600 text-justify px-3 md:px-20 md:text-lg">
-              I&apos;ve always been pragmatic, and a problem-solver, I started
-              building projects and developing my code skills when I was 17
-              years old. Currently, I&apos;m majoring in{' '}
+              I&apos;ve always been a pragmatic person, and a problem-solver, I
+              started building projects and developing my code skills when I was
+              17 years old. Currently, I&apos;m majoring in{' '}
               <span className="text-[#5651e5]"> Information Technology </span>{' '}
               at the{' '}
               <span className="text-[#5651e5]">
@@ -36,7 +36,7 @@ const About = () => {
             width={180}
             height={180}
             src="/assets/profile-pic.png"
-            alt=""
+            alt="profile"
           />
         </div>
       </div>
