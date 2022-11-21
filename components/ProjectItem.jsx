@@ -2,12 +2,19 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FaGithub } from 'react-icons/fa'
+import { useSelector } from 'react-redux'
 
 const ProjectItem = ({ demo, title, stack, repo, live }) => {
+  const darkThemeEnabled = useSelector(
+    state => state.preferences.darkThemeEnabled
+  )
+  const shadowColor = darkThemeEnabled ? 'shadow-black' : 'shadow-gray-400'
   return (
-    <div className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 rounded-xl group ease-in duration-500 hover:bg-gradient-to-r from-[#5651e5] to-[#709dff]">
+    <div
+      className={`relative flex items-center justify-center h-auto w-full shadow-xl rounded-xl group ease-in duration-500 hover:bg-gradient-to-r from-[#5651e5] to-[#709dff] ${shadowColor} bg-white`}
+    >
       <Image
-        className="rounded-xl group-hover:opacity-10"
+        className="rounded-xl group-hover:opacity-10 "
         src={demo}
         alt={title ? title : 'project'}
       />

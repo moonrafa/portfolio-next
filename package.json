@@ -10,12 +10,14 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.9.1",
+    "@reduxjs/toolkit": "^1.9.0",
     "eslint": "8.27.0",
     "eslint-config-next": "13.0.2",
     "next": "13.0.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.6.0",
+    "react-redux": "^8.0.5",
     "swiper": "^8.4.4"
   },
   "devDependencies": {

@@ -6,10 +6,13 @@
 
 @layer base {
   body {
-    @apply bg-[#ecf0f3] text-[#1f2937] tracking-wide font-Montserrat;
+    @apply tracking-wide font-Montserrat;
   }
   html {
-    font-family: 'Montserrat', sans-serif;
+    @apply font-Montserrat;
+  }
+  a {
+    @apply no-underline;
   }
 
   h2,
@@ -28,23 +31,19 @@
   li {
     @apply cursor-pointer hover:text-[#5651e5];
   }
-
-  /* button {
-       @apply shadow-xl shadow-gray-400 rounded-xl uppercase bg-gradient-to-r from-[#5651e5] to-[#709dff] text-white;
-     } */
 }
 @layer components {
   .nav-link {
-    @apply ml-10 text-sm uppercase hover:border-b;
+    @apply ml-10 text-sm uppercase;
   }
   .rounded-button {
-    @apply rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:text-[#1f2937] text-[#5651e5];
+    @apply rounded-full shadow-lg  p-3 cursor-pointer hover:text-[#1f2937] text-[#5651e5];
   }
   .sidebar-link {
     @apply py-4 text-sm sm:text-lg uppercase;
   }
   .social-button {
-    @apply rounded-full shadow-lg shadow-gray-400 p-3 sm:p-5 cursor-pointer hover:scale-105 hover:text-[#1f2937] text-[#5651e5]   ease-in duration-300;
+    @apply rounded-full shadow-lg p-3 sm:p-5 cursor-pointer hover:scale-105 text-[#5651e5]   ease-in duration-300;
   }
   .social-button > a > svg {
     @apply sm:w-6 sm:h-6;
@@ -52,10 +51,64 @@
   .home-social > a > svg {
     @apply w-5 h-5;
   }
+  .light-theme {
+    @apply bg-[#ecf0f3] text-[#1f2937];
+  }
+  .dark-theme {
+    @apply text-[#ecf0f3] bg-[#191919];
+  }
 }
 span.swiper-pagination-bullet.swiper-pagination-bullet-active {
   background-color: #5651e5 !important;
 }
 html {
   scroll-behavior: smooth !important;
+}
+.darkMode {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 30px;
+}
+.darkMode input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slideButton {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #c7d0ff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.slideButton:before {
+  position: absolute;
+  content: '';
+  height: 20px;
+  width: 20px;
+  left: 5px;
+  bottom: 5px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background-color: #5651e5;
+}
+input:checked + .slideButton {
+  background-color: #232323;
+}
+
+input:checked + .slideButton:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+.slideButton.round {
+  border-radius: 34px;
+}
+.slideButton.round:before {
+  border-radius: 50%;
 }

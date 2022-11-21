@@ -28,6 +28,7 @@ import last from '../public/assets/projects/home.png'
 import imageSearcher from '../public/assets/projects/imageSearcher.png'
 import ig from '../public/assets/projects/ig.png'
 import et from '../public/assets/projects/et.png'
+import { useSelector } from 'react-redux'
 
 const Projects = () => {
   const projects = [
@@ -205,8 +206,12 @@ const Projects = () => {
       repo: 'https://github.com/moonrafa/expense-tracker'
     }
   ]
+  const darkThemeEnabled = useSelector(
+    state => state.preferences.darkThemeEnabled
+  )
+  const darkMode = darkThemeEnabled ? 'bg-[#232323]' : 'bg-[#E8E8F7]'
   return (
-    <section id="projects" className="bg-[#E8E8F7] pt-20">
+    <section id="projects" className={`pt-20 ${darkMode}`}>
       <h2 className="text-[#5651e5] font-black py-4 text-center lg:text-left lg:pl-20">
         My projects
       </h2>

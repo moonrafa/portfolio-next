@@ -8,11 +8,25 @@ import Projects from '../components/Projects'
 import Skills from '../components/Skills'
 import emailjs from '@emailjs/browser'
 import Footer from '../components/Footer'
+import { useEffect } from 'react'
+import { useSelector } from 'react-redux'
 
 export default function Home() {
   ;(function () {
     emailjs.init('5hixrZRlAnZhTf7QG')
   })()
+  const darkThemeEnabled = useSelector(
+    state => state.preferences.darkThemeEnabled
+  )
+  useEffect(() => {
+    if (darkThemeEnabled) {
+      document.body.classList.add('dark-theme')
+      document.body.classList.remove('light-theme')
+    } else {
+      document.body.classList.add('light-theme')
+      document.body.classList.remove('dark-theme')
+    }
+  }, [darkThemeEnabled])
 
   return (
     <div>
@@ -34,6 +48,7 @@ export default function Home() {
 
       <main>
         <Homescreen />
+
         <Image
           priority
           width={35}

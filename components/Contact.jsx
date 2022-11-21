@@ -2,13 +2,20 @@ import React, { useState, useRef } from 'react'
 import emailjs from '@emailjs/browser'
 import { FaDiscord, FaEnvelope, FaGithubAlt, FaLinkedin } from 'react-icons/fa'
 import Link from 'next/link'
+import { useSelector } from 'react-redux'
 
 const Contact = () => {
+  const darkThemeEnabled = useSelector(
+    state => state.preferences.darkThemeEnabled
+  )
   const formInitialDetails = {
     name: '',
     email: '',
     message: ''
   }
+  const shadowStyle = darkThemeEnabled
+    ? 'shadow-black hover:text-[#ECF0F3]'
+    : 'shadow-gray-400 hover:text-[#1f2937]'
   const [formDetails, setFormDetails] = useState(formInitialDetails)
   const [buttonText, setButtonText] = useState('Send')
   const [status, setStatus] = useState({})
@@ -54,7 +61,7 @@ const Contact = () => {
           </div>
 
           <div>
-            <button className="social-button mr-3 home-social">
+            <button className={`social-button mr-3 home-social ${shadowStyle}`}>
               <Link
                 href="https://linkedin.com/in/moonrafa"
                 target="_blank"
@@ -63,7 +70,7 @@ const Contact = () => {
                 <FaLinkedin />
               </Link>
             </button>
-            <button className="social-button mr-3 home-social">
+            <button className={`social-button mr-3 home-social ${shadowStyle}`}>
               <Link
                 href="https://github.com/moonrafa"
                 target="_blank"
@@ -72,7 +79,7 @@ const Contact = () => {
                 <FaGithubAlt />
               </Link>
             </button>
-            <button className="social-button mr-3 home-social">
+            <button className={`social-button mr-3 home-social ${shadowStyle}`}>
               <Link
                 href="https://discord.com/users/770899536318169109"
                 target="_blank"
@@ -81,7 +88,7 @@ const Contact = () => {
                 <FaDiscord />
               </Link>
             </button>
-            <button className="social-button home-social">
+            <button className={`social-button mr-3 home-social ${shadowStyle}`}>
               <Link
                 href="mailto:rrafasrodrigues@gmail.com"
                 target="_blank"
@@ -141,7 +148,7 @@ const Contact = () => {
                 <div className="text-center lg:text-left">
                   <button
                     type="submit"
-                    className="font-medium hover:scale-105 text-xs rounded-lg py-4 px-10 uppercase bg-gradient-to-r from-[#5651e5] to-[#709dff] text-white shadow-md shadow-gray-300"
+                    className="font-medium hover:scale-105 text-xs rounded-lg py-4 px-10 uppercase bg-gradient-to-r from-[#5651e5] to-[#709dff] text-white shadow-md"
                   >
                     <span>{buttonText}</span>
                   </button>

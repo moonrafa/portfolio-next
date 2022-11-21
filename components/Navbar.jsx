@@ -3,19 +3,17 @@ import Link from 'next/link'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
 import { FaDiscord, FaEnvelope, FaGithubAlt, FaLinkedin } from 'react-icons/fa'
 import { useState, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { TOGGLE_DARKTHEME } from '../test/actions'
 
 const Navbar = () => {
   const [openSideBar, setOpenSideBar] = useState(false)
   const [shadow, setShadow] = useState(false)
-  const [darkMode, setDarkMode] = useState(false)
-  const handleTheme = () => {
-    if (darkMode) {
-      setDarkMode(false)
-    } else {
-      setDarkMode(true)
-    }
-  }
-  console.log(darkMode)
+  const darkThemeEnabled = useSelector(
+    state => state.preferences.darkThemeEnabled
+  )
+  const dispatch = useDispatch()
+
   useEffect(() => {
     const handleShadow = () => {
       if (window.scrollY > 90) {
@@ -26,20 +24,21 @@ const Navbar = () => {
     }
     window.addEventListener('scroll', handleShadow)
   }, [])
-
+  const shadowCSS = shadow
+    ? 'fixed items-center justify-between px-4 lg:px-24 flex w-full h-20 shadow-xl z-[100]'
+    : 'fixed items-center justify-between px-4 lg:px-24 flex w-full h-20 z-[100]'
+  const darkTheme = darkThemeEnabled ? 'bg-[#191919]' : 'bg-[#ecf0f3]'
+  const sidebarStyle = openSideBar
+    ? 'flex flex-col justify-around fixed left-0 top-0 w-3/4 sm:w-4/5  h-screen p-10 ease-in duration-500 lg:hidden'
+    : 'flex flex-col justify-around fixed left-[-100%] top-0 w-3/4 sm:w-4/5  h-screen p-10 ease-in-out duration-500 lg:hidden'
+  const shadowColor = darkThemeEnabled ? 'shadow-black' : 'shadow-gray-400'
   return (
-    <nav
-      className={
-        shadow
-          ? 'fixed items-center justify-between px-4 lg:px-24 flex w-full h-20 shadow-xl z-[100] bg-[#ecf0f3]'
-          : 'fixed items-center justify-between px-4 lg:px-24 flex w-full h-20 z-[100] bg-[#ecf0f3]'
-      }
-    >
+    <nav className={`${shadowCSS} ${darkTheme}`}>
       <div className="cursor-pointer">
         <Image src="/assets/logo.svg" width={40} height={40} alt="logo" />
       </div>
-      <div>
-        <ul className="hidden lg:flex text-xs">
+      <div className="hidden lg:flex items-center">
+        <ul className="hidden lg:flex text-xs pr-5">
           <Link href="#home">
             <li className="nav-link">Home</li>
           </Link>
@@ -56,14 +55,22 @@ const Navbar = () => {
             <li className="nav-link">Contact</li>
           </Link>
         </ul>
-
-        <div className="cursor-pointer lg:hidden">
-          <AiOutlineMenu
-            size={35}
-            fill="#5651e5"
-            onClick={() => setOpenSideBar(true)}
-          />
+        <div className="hidden lg:inline">
+          <label className="darkMode">
+            <input
+              type="checkbox"
+              onChange={() => dispatch({ type: TOGGLE_DARKTHEME })}
+            />
+            <span className="slideButton round"></span>
+          </label>
         </div>
+      </div>
+      <div className="cursor-pointer lg:hidden">
+        <AiOutlineMenu
+          size={35}
+          fill="#5651e5"
+          onClick={() => setOpenSideBar(true)}
+        />
       </div>
       {openSideBar && (
         <div
@@ -72,17 +79,11 @@ const Navbar = () => {
         ></div>
       )}
       {
-        <div
-          className={
-            openSideBar
-              ? 'flex flex-col justify-around fixed left-0 top-0 w-3/4 sm:w-4/5  h-screen bg-[#ecf0f3] p-10 ease-in duration-500 lg:hidden'
-              : 'flex flex-col justify-around fixed left-[-100%] top-0 w-3/4 sm:w-4/5  h-screen bg-[#ecf0f3] p-10 ease-in-out duration-500 lg:hidden'
-          }
-        >
+        <div className={`${sidebarStyle} ${darkTheme}`}>
           <div>
             <div className="flex items-center justify-between">
               <Image src="/assets/logo.svg" width={40} height={40} alt="Logo" />
-              <button className="rounded-button">
+              <button className={`rounded-button ${shadowColor}`}>
                 <AiOutlineClose
                   size={22}
                   onClick={() => setOpenSideBar(false)}
@@ -117,7 +118,7 @@ const Navbar = () => {
               Connect with me
             </p>
             <div className="my-4 w-4/5 sm:w-3/4 pb-8 flex items-center justify-between">
-              <button className="social-button">
+              <button className={`social-button ${shadowColor}`}>
                 <Link
                   href="https://linkedin.com/in/moonrafa"
                   target="_blank"
@@ -126,7 +127,7 @@ const Navbar = () => {
                   <FaLinkedin />
                 </Link>
               </button>
-              <button className="social-button">
+              <button className={`social-button ${shadowColor}`}>
                 <Link
                   href="https://github.com/moonrafa"
                   target="_blank"
@@ -135,7 +136,7 @@ const Navbar = () => {
                   <FaGithubAlt />
                 </Link>
               </button>
-              <button className="social-button">
+              <button className={`social-button ${shadowColor}`}>
                 <Link
                   href="https://discord.com/users/770899536318169109"
                   target="_blank"
@@ -144,7 +145,7 @@ const Navbar = () => {
                   <FaDiscord />
                 </Link>
               </button>
-              <button className="social-button">
+              <button className={`social-button ${shadowColor}`}>
                 <Link
                   href="mailto:rrafasrodrigues@gmail.com"
                   target="_blank"
@@ -154,6 +155,15 @@ const Navbar = () => {
                 </Link>
               </button>
             </div>
+          </div>
+          <div className="mx-auto">
+            <label className="darkMode">
+              <input
+                type="checkbox"
+                onChange={() => dispatch({ type: TOGGLE_DARKTHEME })}
+              />
+              <span className="slideButton round"></span>
+            </label>
           </div>
         </div>
       }
