@@ -4,7 +4,7 @@ import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
 import { FaDiscord, FaEnvelope, FaGithubAlt, FaLinkedin } from 'react-icons/fa'
 import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { TOGGLE_DARKTHEME } from '../test/actions'
+import { TOGGLE_DARKTHEME } from '../features/actions'
 
 const Navbar = () => {
   const [openSideBar, setOpenSideBar] = useState(false)
