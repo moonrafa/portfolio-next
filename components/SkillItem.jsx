@@ -14,7 +14,7 @@ const SkillItem = ({ icon, name }) => {
         width={64}
         height={64}
       />
-      <h3> {name} </h3>
+      <h3 className="text-sm md:text-base pr-4 lg:pr-0"> {name} </h3>
     </div>
   )
 }

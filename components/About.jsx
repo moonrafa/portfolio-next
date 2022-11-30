@@ -41,8 +41,8 @@ const About = () => {
           </div>
           <Image
             className={`m-auto shadow-lg rounded-full flex items-center justify-center p-1 hover:scale-105 ease-in duration-300 lg:w-60 lg:h-60 ${imageShadow}`}
-            width={180}
-            height={180}
+            width={150}
+            height={150}
             src="/assets/profile-pic.png"
             alt="profile"
           />
