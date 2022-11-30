@@ -42,7 +42,7 @@ const About = () => {
           <Image
             className={`m-auto shadow-lg rounded-full flex items-center justify-center p-1 hover:scale-105 ease-in duration-300 lg:w-60 lg:h-60 ${imageShadow}`}
             width={150}
-            height={150}
+            height={140}
             src="/assets/profile-pic.png"
             alt="profile"
           />

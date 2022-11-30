@@ -24,7 +24,7 @@ const Skills = () => {
         modules={[Autoplay, Pagination]}
       >
         <SwiperSlide>
-          <div className="pb-8 mb-6 mx-auto h-full w-full grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 lg:px-20 lg:pt-20">
+          <div className="pb-8 mb-6 mx-auto h-full w-full grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-12 lg:px-20 lg:pt-20">
             <SkillItem name="Python" icon="/assets/skills/python.svg" />
             <SkillItem name="MySQL" icon="/assets/skills/mysql.svg" />
             <SkillItem name="JavaScript" icon="/assets/skills/js.svg" />

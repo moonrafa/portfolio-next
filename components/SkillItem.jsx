@@ -8,13 +8,13 @@ const SkillItem = ({ icon, name }) => {
     "
     >
       <Image
-        className="mr-2 w-9 h-9"
+        className="mr-1 w-7 h-7 md:w-9 md:h-9"
         src={icon}
         alt={name}
         width={64}
         height={64}
       />
-      <h3 className="text-sm md:text-base pr-4 lg:pr-0"> {name} </h3>
+      <h3 className="text-sm md:text-base"> {name} </h3>
     </div>
   )
 }
