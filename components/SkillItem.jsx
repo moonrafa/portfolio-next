@@ -8,7 +8,7 @@ const SkillItem = ({ icon, name }) => {
     "
     >
       <Image
-        className="mr-1 w-7 h-7 md:w-9 md:h-9 object-contain	"
+        className="mr-1 w-7 h-7 md:w-9 md:h-9	"
         src={icon}
         alt={name}
         width={64}
