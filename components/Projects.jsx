@@ -28,6 +28,7 @@ import last from '../public/assets/projects/home.png'
 import imageSearcher from '../public/assets/projects/imageSearcher.png'
 import ig from '../public/assets/projects/ig.png'
 import et from '../public/assets/projects/et.png'
+import angTodo from '../public/assets/projects/ang-todo.png'
 import { useSelector } from 'react-redux'
 
 const Projects = () => {
@@ -73,17 +74,18 @@ const Projects = () => {
       live: 'https://linkedin-clone-91b73.web.app/'
     },
     {
+      demo: angTodo,
+      title: 'To-do List + CRUD API',
+      stack: 'typescript, angular, jasmine | cakephp, mariadb',
+      repo: 'https://github.com/moonrafa/to-do-list'
+    },
+    {
       demo: dataTransform,
       title: 'Data Transformation',
       stack: 'python, pandas, tabula-py',
       repo: 'https://github.com/moonrafa/data-transformation-py'
     },
-    {
-      demo: satellist,
-      title: 'Satellist: To-do App',
-      stack: 'meteor.js, mongoDB, react, css',
-      repo: 'https://github.com/moonrafa/satellist'
-    },
+
     {
       demo: skystore,
       title: 'Sky Store',
@@ -115,6 +117,12 @@ const Projects = () => {
       title: 'Astro - Ecc vs Porb',
       stack: 'python, pandas, numpy, matplotlib',
       repo: 'https://github.com/moonrafa/ecc-vs-porb/'
+    },
+    {
+      demo: satellist,
+      title: 'Satellist: To-do App',
+      stack: 'meteor.js, mongoDB, react, css',
+      repo: 'https://github.com/moonrafa/satellist'
     },
     {
       demo: bookmark,
